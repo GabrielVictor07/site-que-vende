@@ -1,0 +1,51 @@
+import { Star } from "lucide-react";
+
+const testimonials = [
+  { name: "Mariana Silva", role: "CEO, ModaFit", text: "Em menos de 30 dias, nosso faturamento online dobrou. O site ficou incrível e super rápido.", initials: "MS" },
+  { name: "Carlos Oliveira", role: "Dono, Restaurante Exuent", text: "Antes do site, dependíamos só do Instagram. Agora temos reservas automatizadas e o salão sempre cheio.", initials: "CO" },
+  { name: "Ana Beatriz Souza", role: "Sócia, Silva & Souza Advocacia", text: "Triplicamos a captação de clientes. O site transmite exatamente a seriedade que nosso escritório precisa.", initials: "AS" },
+  { name: "Rafael Mendes", role: "Fundador, TechStart", text: "O melhor investimento que fiz no meu negócio. ROI positivo já na primeira semana.", initials: "RM" },
+];
+
+const TestimonialsSection = () => {
+  return (
+    <section id="depoimentos" className="py-24 section-alt">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+            O que nossos clientes <span className="text-gradient">dizem</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {testimonials.map((t, i) => (
+            <div
+              key={t.name}
+              className={`animate-fade-up delay-${(i + 1) * 100} p-8 rounded-2xl bg-card border border-border hover:border-accent/30 transition-colors duration-300`}
+            >
+              <div className="flex gap-1 mb-4">
+                {[1,2,3,4,5].map(s => (
+                  <Star key={s} size={16} className="fill-gold text-gold" />
+                ))}
+              </div>
+              <p className="text-foreground leading-relaxed mb-6 italic">
+                "{t.text}"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full bg-accent/10 text-accent flex items-center justify-center font-bold text-sm">
+                  {t.initials}
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
