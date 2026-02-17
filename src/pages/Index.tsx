@@ -5,7 +5,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCtaSection from "@/components/FinalCtaSection";
-import PromoSection from "@/components/PromoSection";
+
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 
@@ -20,7 +20,7 @@ const Index = () => {
         <PortfolioSection />
         <TestimonialsSection />
         <FinalCtaSection />
-        <PromoSection />
+        
       </main>
       <Footer />
       <FloatingWhatsApp />
