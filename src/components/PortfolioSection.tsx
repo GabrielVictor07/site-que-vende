@@ -1,11 +1,12 @@
+import { ExternalLink } from "lucide-react";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 
 const projects = [
-  { img: portfolio1, name: "E-commerce ModaFit", desc: "Loja online completa com aumento de 220% em vendas no primeiro mês." },
-  { img: portfolio2, name: "Restaurante Exuent", desc: "Site com cardápio digital e reservas online. Lotação máxima toda semana." },
-  { img: portfolio3, name: "Advocacia Silva & Souza", desc: "Site institucional que triplicou a captação de clientes em 90 dias." },
+  { img: portfolio1, name: "E-commerce ModaFit", desc: "Loja online completa com aumento de 220% em vendas no primeiro mês.", link: "#" },
+  { img: portfolio2, name: "Restaurante Exuent", desc: "Site com cardápio digital e reservas online. Lotação máxima toda semana.", link: "#" },
+  { img: portfolio3, name: "Advocacia Silva & Souza", desc: "Site institucional que triplicou a captação de clientes em 90 dias.", link: "#" },
 ];
 
 const PortfolioSection = () => {
@@ -35,9 +36,17 @@ const PortfolioSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <div className="p-6 space-y-2">
+              <div className="p-6 space-y-3">
                 <h3 className="text-lg font-display font-bold text-foreground">{p.name}</h3>
                 <p className="text-sm text-muted-foreground">{p.desc}</p>
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors mt-2"
+                >
+                  Ver projeto <ExternalLink size={14} />
+                </a>
               </div>
             </div>
           ))}
