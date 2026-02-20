@@ -4,13 +4,15 @@ const WHATSAPP_LINK = "https://wa.me/5511999999999?text=Olá! Quero um site que 
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden flex items-center justify-center">
-      {/* Background image */}
+    <section className="relative overflow-hidden flex items-center justify-center" style={{ minHeight: 'max(100vh, 600px)' }}>
+      {/* Background image - contain to show full image */}
       <img
         src={heroBg}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain object-center"
       />
+      {/* Fill any gaps with matching dark color */}
+      <div className="absolute inset-0 -z-10 bg-black" />
 
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/40" />
